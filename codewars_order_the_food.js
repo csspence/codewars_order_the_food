@@ -26,6 +26,15 @@ The input array will always be valid and formatted as in the example above.
 there are 5 possible meal options and the strings representing the selected meal option will always be formatted in the same way, as follows: 'standard', 'vegetarian', 'vegan', 'diabetic', 'gluten-intolerant'
 */
 
-function orderFood(list) {
-  // thank you for checking out the Coding Meetup kata :)
+const orderFood = (list) => {
+  let obj = {};
+  for(let i = 0; i < list.length; i++) {
+    if(obj[list[i].meal] === undefined) {
+      obj[list[i].meal] = 1;
+    } else {
+      obj[list[i].meal]++;
+    }
+  }
+
+  return obj;
 }
